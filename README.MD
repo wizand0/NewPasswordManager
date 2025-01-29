@@ -38,14 +38,15 @@ Sharing        |  Searching bar
 
 ## Skills
 - Kotlin
-- Kotlin Coroutines
 - SharedPreferences
 - BiometricPrompt
-- LiveData
-- Lifecycle components
 - Room Database
-- SQLite
-- RecyclerView
+- SQLCipher: для шифрования базы данных.
+- Jetpack Security: для безопасного хранения мастер-пароля.
+- BiometricPrompt: для биометрической аутентификации.
+- Kotlin Coroutines: для асинхронных операций.
+- ViewModel и LiveData: для управления данными и обновления UI.
+- Navigation Component: для навигации между экранами.
 
 ## Versions
 - v0.8b - Basic functionality
