@@ -13,6 +13,12 @@
         android:theme="@style/Theme.NewPasswordManager"
         tools:targetApi="31">
         <activity
+            android:name=".AddEditEntryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

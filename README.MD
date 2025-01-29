@@ -1,4 +1,4 @@
-# NewShoppingList
+# NewPasswordManager
 ### by Wizand0
 
 The application is completely offline and does not require permissions to access the network.
@@ -12,7 +12,9 @@ Login using a master password or biometrics.
 Exporting records to a file.
 Searching for passwords by login.
 
-vv0.5b - Initial start.
+End 7.5
+
+v0.5b - Initial start.
 
 ## Screenshots
 
@@ -27,7 +29,6 @@ Sharing        |  Searching bar
 ## TODO
 - ~~Searchbar for elements in list~~
 - Searchbar
-- KSP (del KAPT)
 - Tests
 - Custom fields for data entry
 - beautiful and user-friendly UI
