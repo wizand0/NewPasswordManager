@@ -6,6 +6,7 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
+import android.os.Bundle
 import android.provider.DocumentsContract
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -15,12 +16,13 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.passwordmanager.adapter.PasswordAdapter
-import com.example.passwordmanager.databinding.ActivityMainBinding
-import com.example.passwordmanager.data.PasswordDatabase
-import com.example.passwordmanager.model.PasswordEntry
-import com.example.passwordmanager.utils.CsvExporter
+import ru.wizand.newpasswordmanager.adapter.PasswordAdapter
+import ru.wizand.newpasswordmanager.databinding.ActivityMainBinding
+import ru.wizand.newpasswordmanager.data.PasswordDatabase
+import ru.wizand.newpasswordmanager.model.PasswordEntry
+import ru.wizand.newpasswordmanager.utils.CsvExporter
 import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 
 class MainActivity : AppCompatActivity() {
@@ -75,6 +77,11 @@ class MainActivity : AppCompatActivity() {
             database.passwordDao().getAllEntries().collect { entries ->
                 adapter.submitList(entries)
             }
+//            val entries = database.passwordDao()
+//                .getAllEntries().first()
+            // получаем сразу List<PasswordEntry>
+
+//            adapter.submitList(entries) // теперь здесь список
         }
     }
 
@@ -83,6 +90,13 @@ class MainActivity : AppCompatActivity() {
             database.passwordDao().searchEntries("%$query%").collect { entries ->
                 adapter.submitList(entries)
             }
+//            val entries = database.passwordDao()
+//                .searchEntries("%$query%")
+//                .first() // получаем сразу List<PasswordEntry>
+
+//            adapter.submitList(entries) // теперь здесь список
+
+
         }
     }
 
@@ -125,7 +139,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun exportToCsv(uri: Uri) {
         lifecycleScope.launch {
-            val entries = database.passwordDao().getAllEntries().collect { it }
+//            val entries = database.passwordDao().getAllEntries().collect { it }
+            val entries = database.passwordDao().getAllEntries().first()
+
             val csvData = CsvExporter.export(entries)
             val success = kotlin.runCatching {
                 contentResolver.openOutputStream(uri)?.use { outputStream ->

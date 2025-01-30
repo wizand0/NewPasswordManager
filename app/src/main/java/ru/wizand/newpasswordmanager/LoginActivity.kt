@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
+import ru.wizand.newpasswordmanager.data.PasswordDatabase
 import ru.wizand.newpasswordmanager.databinding.ActivityLoginBinding
 import java.util.concurrent.Executor
 

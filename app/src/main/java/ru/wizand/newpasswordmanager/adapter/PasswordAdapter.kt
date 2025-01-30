@@ -38,7 +38,7 @@ class PasswordAdapter(
                     binding.btnShowPassword.setImageResource(R.drawable.ic_visibility_off)
                 } else {
                     binding.tvPassword.text = entry.password
-                    binding.btnShowPassword.setImageResource(R.drawable.ic_visibility)
+                    binding.btnShowPassword.setImageResource(R.drawable.ic_visibility_on)
                 }
                 isPasswordVisible = !isPasswordVisible
             }

@@ -14,7 +14,7 @@ class AddEditEntryActivity : AppCompatActivity() {
     private lateinit var binding: ActivityAddEditEntryBinding
     private lateinit var database: PasswordDatabase
     private var isEditMode: Boolean = false
-    private var entryId: Int? = null
+    private var entryId: Long? = null
     private lateinit var appPreferences: AppPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +29,7 @@ class AddEditEntryActivity : AppCompatActivity() {
         val intent = intent
         if (intent.hasExtra("entry_id")) {
             isEditMode = true
-            entryId = intent.getIntExtra("entry_id", -1)
+            entryId = intent.getLongExtra("entry_id", -1L)
             loadEntry(entryId!!)
         }
 
@@ -42,7 +42,7 @@ class AddEditEntryActivity : AppCompatActivity() {
         }
     }
 
-    private fun loadEntry(id: Int) {
+    private fun loadEntry(id: Long) {
         lifecycleScope.launch {
             database.passwordDao().getAllEntries().collect { entries ->
                 val entry = entries.find { it.id == id }
@@ -66,7 +66,7 @@ class AddEditEntryActivity : AppCompatActivity() {
         }
 
         val entry = PasswordEntry(
-            id = entryId ?: 0,
+            id = entryId ?: 0L,
             siteName = siteName,
             username = username,
             password = password

@@ -21,7 +21,7 @@ Searching for passwords by login.
 
 End 7.5
 
-v0.5b - Initial start.
+v0.9b - Basic functionality.
 
 ## Screenshots
 
@@ -61,8 +61,8 @@ Sharing        |  Searching bar
 - Navigation Component: для навигации между экранами.
 
 ## Versions
-- v0.8b - Basic functionality
-  Android-приложение на Kotlin для хранения паролей с использованием современных библиотек и лучших практик. Приложение включает следующие функции:
+- v0.9b - Basic functionality
+- v0.5b - Basic functionality
 
 ## Полезные ресурсы
 
