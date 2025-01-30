@@ -21,7 +21,7 @@ Searching for passwords by login.
 
 End 7.5
 
-v0.9b - Basic functionality.
+v1.0 - Basic functionality.
 
 ## Screenshots
 
@@ -35,7 +35,7 @@ Sharing        |  Searching bar
 
 ## TODO
 - ~~Searchbar for elements in list~~
-- Searchbar
+- Edit passwords
 - Tests
 - Custom fields for data entry
 - beautiful and user-friendly UI
@@ -61,6 +61,7 @@ Sharing        |  Searching bar
 - Navigation Component: для навигации между экранами.
 
 ## Versions
+- v1.0 - Basic functionality
 - v0.9b - Basic functionality
 - v0.5b - Basic functionality
 
