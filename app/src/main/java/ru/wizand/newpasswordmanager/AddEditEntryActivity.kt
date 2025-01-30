@@ -1,20 +1,88 @@
 package ru.wizand.newpasswordmanager
 
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import ru.wizand.newpasswordmanager.databinding.ActivityAddEditEntryBinding
+import ru.wizand.newpasswordmanager.dialog.PasswordGeneratorDialog
+import ru.wizand.newpasswordmanager.data.PasswordDatabase
+import ru.wizand.newpasswordmanager.model.PasswordEntry
+import kotlinx.coroutines.launch
 
 class AddEditEntryActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityAddEditEntryBinding
+    private lateinit var database: PasswordDatabase
+    private var isEditMode: Boolean = false
+    private var entryId: Int? = null
+    private lateinit var appPreferences: AppPreferences
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_add_edit_entry)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+        binding = ActivityAddEditEntryBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        appPreferences = AppPreferences(this)
+        database = PasswordDatabase.getDatabase(this, appPreferences.getMasterPassword()!!)
+
+        // Проверка, редактируем ли мы существующую запись
+        val intent = intent
+        if (intent.hasExtra("entry_id")) {
+            isEditMode = true
+            entryId = intent.getIntExtra("entry_id", -1)
+            loadEntry(entryId!!)
         }
+
+        binding.btnGeneratePassword.setOnClickListener {
+            showPasswordGeneratorDialog()
+        }
+
+        binding.btnSave.setOnClickListener {
+            saveEntry()
+        }
+    }
+
+    private fun loadEntry(id: Int) {
+        lifecycleScope.launch {
+            database.passwordDao().getAllEntries().collect { entries ->
+                val entry = entries.find { it.id == id }
+                entry?.let {
+                    binding.etSiteName.setText(it.siteName)
+                    binding.etUsername.setText(it.username)
+                    binding.etPassword.setText(it.password)
+                }
+            }
+        }
+    }
+
+    private fun saveEntry() {
+        val siteName = binding.etSiteName.text.toString().trim()
+        val username = binding.etUsername.text.toString().trim()
+        val password = binding.etPassword.text.toString().trim()
+
+        if (siteName.isEmpty() || username.isEmpty() || password.isEmpty()) {
+            Toast.makeText(this, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val entry = PasswordEntry(
+            id = entryId ?: 0,
+            siteName = siteName,
+            username = username,
+            password = password
+        )
+
+        lifecycleScope.launch {
+            database.passwordDao().insertEntry(entry)
+            Toast.makeText(this@AddEditEntryActivity, "Запись сохранена", Toast.LENGTH_SHORT).show()
+            finish()
+        }
+    }
+
+    private fun showPasswordGeneratorDialog() {
+        val dialog = PasswordGeneratorDialog { generatedPassword ->
+            binding.etPassword.setText(generatedPassword)
+        }
+        dialog.show(supportFragmentManager, "PasswordGeneratorDialog")
     }
 }
