@@ -22,11 +22,11 @@ Searching for passwords by login.
 
 ## Screenshots
 
-Adding lists           |         Adding elements
+Login screen          |         Main View
 :-------------------------:|:------------------------------:
 ![screenshot](screenshot1.png)  | ![screenshot](screenshot2.png)
 
-Sharing        |  Searching bar
+Searching bar        |  Export
 :-------------------------:|:------------------------------:
 ![screenshot](screenshot3.png) |  ![screenshot](screenshot4.png)
 
