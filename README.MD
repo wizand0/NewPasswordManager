@@ -3,9 +3,11 @@
 
 The application is completely offline and does not require permissions to access the network.
 
+[RuStore](https://www.rustore.ru/catalog/app/ru.wizand.newpasswordmanager)
+
 ## Functionality:
 
-Storing passwords with website, login, and password details.
+Storing passwords names, logins, and password details.
 Password generation with character customization.
 Database encryption.
 Login using a master password or biometrics.
@@ -22,13 +24,13 @@ Searching for passwords by login.
 
 ## Screenshots
 
-Login screen          |         Main View
-:-------------------------:|:------------------------------:
-![screenshot](screenshot1.png)  | ![screenshot](screenshot2.png)
+|          Login screen          |           Main View            |
+|:------------------------------:|:------------------------------:|
+| ![screenshot](screenshot1.png) | ![screenshot](screenshot2.png) |
 
-Searching bar        |  Export
-:-------------------------:|:------------------------------:
-![screenshot](screenshot3.png) |  ![screenshot](screenshot4.png)
+|         Searching bar          |             Export             |
+|:------------------------------:|:------------------------------:|
+| ![screenshot](screenshot3.png) | ![screenshot](screenshot4.png) |
 
 ## TODO
 - ~~Searchbar for elements in list~~
@@ -44,6 +46,8 @@ Searching bar        |  Export
 - **Backup**: Интеграция с облачными сервисами для автоматического резервного копирования данных.
 - **Localization**: Поддержка нескольких языков для удобства пользователей из разных регионов.
 - **Privacy and security**: Включение механизма блокировки приложения после нескольких неудачных попыток аутентификации.
+- **Password Strength checker**
+- **Preferences**
 
 ## Skills
 - Kotlin
