@@ -35,10 +35,11 @@ class PasswordAdapter(
             binding.btnShowPassword.setOnClickListener {
                 if (isPasswordVisible) {
                     binding.tvPassword.text = "••••••••"
-                    binding.btnShowPassword.setImageResource(R.drawable.ic_visibility_off)
+//                    binding.btnShowPassword.setIconResource(R.drawable.ic_visibility_off)
+//                    binding.btnShowPassword.setImageResource(R.drawable.ic_visibility_off)
                 } else {
                     binding.tvPassword.text = entry.password
-                    binding.btnShowPassword.setImageResource(R.drawable.ic_visibility_on)
+//                    binding.btnShowPassword.setImageResource(R.drawable.ic_visibility_on)
                 }
                 isPasswordVisible = !isPasswordVisible
             }

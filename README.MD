@@ -19,9 +19,6 @@ Searching for passwords by login.
 4. Генерация паролей: Возможность создания надежных паролей с настройками типов символов.
 5. Экспорт данных: Сохранение записей в файл CSV для резервного копирования или переноса данных.
 
-End 7.5
-
-v1.0 - Basic functionality.
 
 ## Screenshots
 
@@ -61,6 +58,7 @@ Sharing        |  Searching bar
 - Navigation Component: для навигации между экранами.
 
 ## Versions
+- v1.1.8 - Material design for login, generate password and recycler. copy & paste passwords
 - v1.0 - Basic functionality
 - v0.9b - Basic functionality
 - v0.5b - Basic functionality

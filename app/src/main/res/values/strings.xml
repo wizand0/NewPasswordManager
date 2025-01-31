@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">NewPasswordManager</string>
+    <string name="show_password">Показать пароль</string>
+    <string name="delete_entry">Удалить запись</string>
 </resources>
