@@ -1,51 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/addEditLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/etSiteName"
+        <!-- Заголовок экрана -->
+        <TextView
+            android:id="@+id/tvHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить новый пароль"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnBackground"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Поле ввода названия сайта или приложения -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilSiteName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Название сайта или приложения"
-            android:inputType="text"/>
+            app:boxStrokeColor="?attr/colorPrimary"
+            app:boxBackgroundMode="outline"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <EditText
-            android:id="@+id/etUsername"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etSiteName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:drawableStart="@drawable/ic_site"
+                android:drawablePadding="8dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Поле ввода логина -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Логин"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="8dp"/>
+            app:boxStrokeColor="?attr/colorPrimary"
+            app:boxBackgroundMode="outline"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="16dp">
 
-        <EditText
-            android:id="@+id/etPassword"
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/ic_username"
+                android:drawablePadding="8dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Поле ввода пароля с переключателем видимости -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Пароль"
-            android:inputType="textPassword"
-            android:layout_marginTop="8dp"/>
+            app:endIconMode="password_toggle"
+            app:boxStrokeColor="?attr/colorPrimary"
+            app:boxBackgroundMode="outline"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_marginTop="16dp">
 
-        <Button
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/ic_password"
+                android:drawablePadding="8dp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Кнопка генерации пароля -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnGeneratePassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Сгенерировать пароль"
-            android:layout_marginTop="8dp"/>
+            android:icon="@drawable/ic_generate_password"
+            app:iconPadding="8dp"
+            app:iconTint="?attr/colorOnPrimary"
+            app:cornerRadius="8dp"
+            app:backgroundTint="?attr/colorPrimary"
+            android:layout_marginTop="16dp"/>
 
-        <Button
+        <!-- Кнопка сохранения -->
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Сохранить"
-            android:layout_marginTop="16dp"/>
+            android:icon="@drawable/ic_save"
+            app:iconPadding="8dp"
+            app:iconTint="?attr/colorOnPrimary"
+            app:cornerRadius="8dp"
+            app:backgroundTint="?attr/colorPrimary"
+            android:layout_marginTop="24dp"/>
     </LinearLayout>
 </ScrollView>

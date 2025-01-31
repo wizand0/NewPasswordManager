@@ -40,6 +40,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Настройка Toolbar
+//        setSupportActionBar(binding.toolbar)
+
         appPreferences = AppPreferences(this)
         database = PasswordDatabase.getDatabase(this, appPreferences.getMasterPassword()!!)
 
