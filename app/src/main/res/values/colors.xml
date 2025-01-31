@@ -11,4 +11,15 @@
     <color name="colorError">#B00020</color>
     <color name="colorOnSurfaceVariant">#FF6200EE</color>
 
+    <color name="black_dark">#FF000000</color>
+    <color name="white_dark">#000000</color>
+    <color name="purple_200_dark">#FFBB86FC</color>
+    <color name="purple_500_dark">#BB86FC</color>
+    <color name="purple_700_dark">#3700B3</color>
+    <color name="teal_200_dark">#FF03DAC5</color>
+    <color name="colorSurface_dark">#121212</color>
+    <color name="colorOnSurface_dark">#FFFFFF</color>
+    <color name="colorError_dark">#CF6679</color>
+    <color name="colorOnSurfaceVariant_dark">#BB86FC</color>
+
 </resources>

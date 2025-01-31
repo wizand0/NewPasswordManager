@@ -58,6 +58,7 @@ Searching bar        |  Export
 - Navigation Component: для навигации между экранами.
 
 ## Versions
+- v1.2.1 - Material design, Localization (En, Ru, De, Zh, Es)
 - v1.1.8 - Material design for login, generate password and recycler. copy & paste passwords
 - v1.0 - Basic functionality
 - v0.9b - Basic functionality

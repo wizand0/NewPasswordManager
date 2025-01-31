@@ -58,9 +58,9 @@ class LoginActivity : AppCompatActivity() {
             })
 
         promptInfo = BiometricPrompt.PromptInfo.Builder()
-            .setTitle("Biometric Login")
-            .setSubtitle("Use your biometric credential to login")
-            .setNegativeButtonText("Use Master Password")
+            .setTitle(getString(R.string.biometric_login))
+            .setSubtitle(getString(R.string.use_your_biometric_credential_to_login))
+            .setNegativeButtonText(getString(R.string.use_master_password))
             .build()
     }
 
@@ -92,14 +92,14 @@ class LoginActivity : AppCompatActivity() {
                 appPreferences.setMasterPassword(inputPassword)
                 navigateToMain()
             } else {
-                binding.etPassword.error = "Введите мастер-пароль"
+                binding.etPassword.error = getString(R.string.Enter_master_password)
             }
         } else {
             val masterPassword = appPreferences.getMasterPassword()
             if (inputPassword == masterPassword) {
                 navigateToMain()
             } else {
-                binding.etPassword.error = "Неверный мастер-пароль"
+                binding.etPassword.error = getString(R.string.wrong_master_password)
             }
         }
     }

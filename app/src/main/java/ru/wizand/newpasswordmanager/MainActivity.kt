@@ -105,19 +105,19 @@ class MainActivity : AppCompatActivity() {
 
     private fun showDeleteDialog(entry: PasswordEntry) {
         AlertDialog.Builder(this)
-            .setTitle("Удаление записи")
-            .setMessage("Вы уверены, что хотите удалить эту запись?")
-            .setPositiveButton("Да") { _, _ ->
+            .setTitle(getString(R.string.entry_deleting))
+            .setMessage(getString(R.string.are_you_sure_want_to_delete))
+            .setPositiveButton(getString(R.string.yes)) { _, _ ->
                 deleteEntry(entry)
             }
-            .setNegativeButton("Нет", null)
+            .setNegativeButton(getString(R.string.no), null)
             .show()
     }
 
     private fun deleteEntry(entry: PasswordEntry) {
         lifecycleScope.launch {
             database.passwordDao().deleteEntry(entry)
-            Toast.makeText(this@MainActivity, "Запись удалена", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@MainActivity, getString(R.string.entry_deleted), Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -153,9 +153,11 @@ class MainActivity : AppCompatActivity() {
             }.isSuccess
 
             if (success) {
-                Toast.makeText(this@MainActivity, "Экспорт выполнен успешно", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity,
+                    getString(R.string.export_success), Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this@MainActivity, "Ошибка экспорта", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@MainActivity,
+                    getString(R.string.export_mistake), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -170,7 +172,7 @@ class MainActivity : AppCompatActivity() {
             if ((grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                 startExport()
             } else {
-                Toast.makeText(this, "Разрешение отклонено", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.permissions_denied), Toast.LENGTH_SHORT).show()
             }
         } else {
             super.onRequestPermissionsResult(requestCode, permissions, grantResults)

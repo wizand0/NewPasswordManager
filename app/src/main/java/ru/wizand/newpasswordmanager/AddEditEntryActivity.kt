@@ -61,7 +61,7 @@ class AddEditEntryActivity : AppCompatActivity() {
         val password = binding.etPassword.text.toString().trim()
 
         if (siteName.isEmpty() || username.isEmpty() || password.isEmpty()) {
-            Toast.makeText(this, "Пожалуйста, заполните все поля", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.plese_enter_all_fields), Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -74,7 +74,8 @@ class AddEditEntryActivity : AppCompatActivity() {
 
         lifecycleScope.launch {
             database.passwordDao().insertEntry(entry)
-            Toast.makeText(this@AddEditEntryActivity, "Запись сохранена", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@AddEditEntryActivity,
+                getString(R.string.your_entry_saved), Toast.LENGTH_SHORT).show()
             finish()
         }
     }

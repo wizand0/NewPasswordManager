@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="show_password">显示密码</string>
+    <string name="delete_entry">删除条目</string>
+    <string name="master_password">主密码</string>
+    <string name="login">登录</string>
+    <string name="login_with_biometrics">使用生物识别登录</string>
+    <string name="generate_pass">生成密码</string>
+    <string name="save">保存</string>
+    <string name="password">密码</string>
+    <string name="name">名称</string>
+    <string name="add_new_password">添加新密码</string>
+    <string name="password_generator">密码生成器</string>
+    <string name="password_length">密码长度</string>
+    <string name="_8">8</string>
+    <string name="upper">大写字母</string>
+    <string name="lower">小写字母</string>
+    <string name="numbers">数字</string>
+    <string name="specials">特殊字符</string>
+    <string name="generate_and_copy">生成并复制</string>
+    <string name="cancel">取消</string>
+    <string name="add">添加条目</string>
+    <string name="export">导出</string>
+    <string name="your_login">登录：</string>
+    <string name="your_pass_copied">密码 已复制：</string>
+    <string name="your_pass_generated">生成的密码：</string>
+    <string name="your_entry_saved">条目已保存</string>
+    <string name="plese_enter_all_fields">请填写所有字段</string>
+    <string name="biometric_login">生物识别登录</string>
+    <string name="use_your_biometric_credential_to_login">使用您的生物识别凭据登录</string>
+    <string name="use_master_password">使用主密码</string>
+    <string name="Enter_master_password">输入主密码</string>
+    <string name="wrong_master_password">主密码不正确</string>
+    <string name="entry_deleting">删除条目</string>
+    <string name="are_you_sure_want_to_delete">您确定要删除此条目吗？</string>
+    <string name="entry_deleted">条目已删除</string>
+    <string name="export_success">导出成功完成</string>
+    <string name="export_mistake">导出错误</string>
+    <string name="permissions_denied">权限被拒绝</string>
+    <string name="add_entry">添加条目</string>
+    <string name="yes">是</string>
+    <string name="no">不</string>
+</resources>

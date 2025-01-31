@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="show_password">Mostrar contraseña</string>
+    <string name="delete_entry">Eliminar entrada</string>
+    <string name="master_password">Contraseña Maestra</string>
+    <string name="login">Inicio de sesión</string>
+    <string name="login_with_biometrics">Iniciar sesión con biometría</string>
+    <string name="generate_pass">Generar contraseña</string>
+    <string name="save">Guardar</string>
+    <string name="password">Contraseña</string>
+    <string name="name">Nombre</string>
+    <string name="add_new_password">Agregar nueva contraseña</string>
+    <string name="password_generator">Generador de Contraseñas</string>
+    <string name="password_length">Longitud de la contraseña</string>
+    <string name="_8">8</string>
+    <string name="upper">Letras mayúsculas</string>
+    <string name="lower">Letras minúsculas</string>
+    <string name="numbers">Números</string>
+    <string name="specials">Caracteres especiales</string>
+    <string name="generate_and_copy">Generar y copiar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="add">Agregar entrada</string>
+    <string name="export">Exportar</string>
+    <string name="your_login">"Inicio de sesión: "</string>
+    <string name="your_pass_copied">Contraseña copiada:</string>
+    <string name="your_pass_generated">"Contraseña generada: "</string>
+    <string name="your_entry_saved">Entrada guardada</string>
+    <string name="plese_enter_all_fields">Por favor, completa todos los campos</string>
+    <string name="biometric_login">Inicio de sesión biométrico</string>
+    <string name="use_your_biometric_credential_to_login">Usa tus credenciales biométricas para iniciar sesión</string>
+    <string name="use_master_password">Usar contraseña maestra</string>
+    <string name="Enter_master_password">Ingresa la contraseña maestra</string>
+    <string name="wrong_master_password">Contraseña maestra incorrecta</string>
+    <string name="entry_deleting">Eliminar entrada</string>
+    <string name="are_you_sure_want_to_delete">¿Estás seguro de que deseas eliminar esta entrada?</string>
+    <string name="entry_deleted">Entrada eliminada</string>
+    <string name="export_success">Exportación completada con éxito</string>
+    <string name="export_mistake">Error de exportación</string>
+    <string name="permissions_denied">Permiso denegado</string>
+    <string name="add_entry">Agregar entrada</string>
+    <string name="yes">Sí</string>
+    <string name="no">No</string>
+</resources>

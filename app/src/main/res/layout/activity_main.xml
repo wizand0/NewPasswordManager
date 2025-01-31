@@ -32,26 +32,32 @@
         app:layout_constraintTop_toBottomOf="@id/searchView"
         app:layout_constraintVertical_bias="1.0" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fabAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="Добавить запись"
-        android:src="@drawable/ic_add"
+        android:contentDescription="@string/add"
+        android:text="@string/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"/>
+        android:layout_margin="16dp"
+        app:icon="@drawable/ic_add"
+        app:layout_anchor="@id/recyclerView"
+        app:layout_anchorGravity="bottom|end"
+        app:fabSize="normal"
+        app:backgroundTint="?attr/colorPrimary"/>
 
     <!-- FloatingActionButton для экспорта данных -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fabExport"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:contentDescription="Экспорт"
-        android:src="@drawable/ic_export"
+        android:contentDescription="@string/export"
+        android:text="@string/export"
+        app:icon="@drawable/ic_export"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
         app:layout_constraintBottom_toTopOf="@+id/fabAdd"
         app:layout_constraintEnd_toEndOf="@+id/fabAdd"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/fabAdd" />
 </androidx.constraintlayout.widget.ConstraintLayout>

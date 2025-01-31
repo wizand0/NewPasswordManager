@@ -4,12 +4,14 @@ import android.app.Dialog
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context.CLIPBOARD_SERVICE
+import android.content.res.Resources
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.DialogFragment
+import ru.wizand.newpasswordmanager.R
 import ru.wizand.newpasswordmanager.databinding.DialogPasswordGeneratorBinding
 import ru.wizand.newpasswordmanager.utils.PasswordGenerator
 
@@ -54,7 +56,7 @@ class PasswordGeneratorDialog(
 //            .setTitle("Генерация пароля")
 //            .setView(view)
 //            .create()
-            .setTitle("Генерация пароля")
+            .setTitle(R.string.password_generator)
             .setView(binding.root)
             .create()
 // Кнопки materialDesign
@@ -74,7 +76,12 @@ class PasswordGeneratorDialog(
                 includeDigits = includeDigits,
                 includeSpecial = includeSpecial
             )
-            Toast.makeText(requireContext(), "Сгенерированный пароль: $password", Toast.LENGTH_LONG).show()
+
+//            val string1 = Resources.getSystem().getString(R.string.your_pass_generated)
+            val string1: String = "${getString(R.string.your_pass_generated)} $password"
+
+//            Toast.makeText(requireContext(), string1, Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), string1, Toast.LENGTH_LONG).show()
 
             // Обработка сгенерированного пароля
             onPasswordGenerated(password)
@@ -99,7 +106,6 @@ class PasswordGeneratorDialog(
                 includeDigits = includeDigits,
                 includeSpecial = includeSpecial
             )
-            Toast.makeText(requireContext(), "Сгенерированный пароль: $password", Toast.LENGTH_LONG).show()
             textCopyThenPost(password)
 
             // Обработка сгенерированного пароля
@@ -122,15 +128,24 @@ class PasswordGeneratorDialog(
         _binding = null
     }
 
-    fun textCopyThenPost(textCopied:String) {
+    fun textCopyThenPost(textCopied: String) {
 //        val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
-        val clipboardManager: ClipboardManager = activity?.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+        val clipboardManager: ClipboardManager =
+            activity?.getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
         // When setting the clipboard text.
-        clipboardManager.setPrimaryClip(ClipData.newPlainText   ("", textCopied))
+        clipboardManager.setPrimaryClip(ClipData.newPlainText("", textCopied))
         // Only show a toast for Android 12 and lower.
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2) {
 
-            Toast.makeText(requireContext(), "Пароль: $textCopied скопирован", Toast.LENGTH_LONG).show()
+//            val string2 = Resources.getSystem().getString(R.string.your_pass_copied)
+            val string2: String = "${getString(R.string.your_pass_copied)} $textCopied"
+
+//            Toast.makeText(requireContext(), "Пароль: $textCopied скопирован", Toast.LENGTH_LONG).show()
+            Toast.makeText(
+                requireContext(),
+                string2, Toast.LENGTH_LONG
+            ).show()
+        }
     }
 
 }
