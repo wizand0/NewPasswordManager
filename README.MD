@@ -35,6 +35,7 @@ Searching for passwords by login.
 ## TODO
 - ~~Searchbar for elements in list~~
 - Edit passwords
+- ~~copy & paste passwords~~
 - Tests
 - Custom fields for data entry
 - ~~beautiful and user-friendly UI~~
