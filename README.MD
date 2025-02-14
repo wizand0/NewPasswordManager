@@ -37,17 +37,17 @@ Searching for passwords by login.
 - Edit passwords
 - Tests
 - Custom fields for data entry
-- beautiful and user-friendly UI
+- ~~beautiful and user-friendly UI~~
 
 ## Very long-term TODO
 - exporting a database
 - importing a database
-- **Changing master-password**: Реализуйте возможность изменения мастер-пароля с перенаправлением и безопасным обновлением базы данных.
+- **Changing master-password**: Возможность изменения мастер-пароля с перенаправлением и безопасным обновлением базы данных.
 - **Backup**: Интеграция с облачными сервисами для автоматического резервного копирования данных.
-- **Localization**: Поддержка нескольких языков для удобства пользователей из разных регионов.
+- ~~**Localization**: Поддержка нескольких языков для удобства пользователей из разных регионов.~~
 - **Privacy and security**: Включение механизма блокировки приложения после нескольких неудачных попыток аутентификации.
 - **Password Strength checker**
-- **Preferences**
+- ~~**Preferences**~~
 
 ## Skills
 - Kotlin
